@@ -51,10 +51,12 @@ class Phonebook extends Component {
     }
 
     componentDidMount() {
-        if (localStorage.getItem('contacts') === null) return
-        this.setState(
+        if (localStorage.getItem('contacts') !== null) {
+                    this.setState(
             { contacts: JSON.parse(localStorage.getItem('contacts')) }
         )
+        }
+
       
     }
 
